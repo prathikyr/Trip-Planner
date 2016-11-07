@@ -1,0 +1,20 @@
+h1 {
+  color: red;
+}
+
+body {
+    background-color: lightgreen;
+}
+
+#banner {
+	background-color: black;
+}
+
+a {
+	size: 200px; 
+	background-color: lightblue; 
+}
+
+ul {
+	list-style-type: none;
+}
