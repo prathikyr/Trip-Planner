@@ -4,9 +4,10 @@ var utility = require('./utility.js');
 indexPage = function(req, res){
 	if(req.session.get('loggedIn') == true)
 		res.redirect('/home');
-	else
+	else{
 		req.session.set('loggedIn', false);
-	res.render('index.pug');
+		res.render('index.pug');
+	}
 }
 
 homePage = function(req, res){
@@ -22,7 +23,7 @@ planPage = function(req, res){
 	details.startTime = req.body.startTime;
 	details.startPlace = req.body.startPlace;
 
-	updatePlans(req, res, details);
+	utility.updatePlans(req, res, details);
 }
 
 
