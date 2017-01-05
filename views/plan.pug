@@ -1,0 +1,36 @@
+doctype html
+
+html
+	head
+		title hello
+		style
+			include css/style.css
+
+		script
+			include js/plan.js
+			
+	body(onload='javascript:initTime();')
+		a(href='/logout' class='log-out' style="float: right;")
+			span Log out 
+		center
+			img(src='/logo.png')
+		div
+			a(href="javascript:addPlace();", class='menu')
+				span Add Next Place    
+			a(href='/viewplan', class='menu')
+				span View Plan
+		br
+		center
+			div(class='initPlan')
+				div(id='addPlace' style='display:block')
+					h3 Details of the Place
+					form(action='/addplace', method="post")
+						input(type="text", id="place", name="place", placeholder="Place Name", required)
+						br
+						input(type="number", id="distance", name="distance", placeholder="Distance from last Place", min=0, required)
+						br
+						input(type='datetime-local', id='arrival', name='arrival', placeholder='Arrival', required)
+						br
+						input(type='datetime-local', id='departure', name='departure', required)
+						br
+						input(type='submit' name='submit')

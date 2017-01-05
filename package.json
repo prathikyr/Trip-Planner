@@ -9,6 +9,10 @@
   "author": "Prathik",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.15.2",
+    "express-fileupload": "0.0.5",
+    "mongodb": "^2.2.11",
+    "multer": "^1.2.0",
     "pug": "^2.0.0-beta6"
   }
 }

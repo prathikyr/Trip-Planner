@@ -1,0 +1,29 @@
+doctype html
+
+html
+	head
+		title hello
+		style
+			include css/style.css
+
+		script
+			include js/plan.js
+			
+	body(onload = 'javascript:initPlan();')
+		a(href='/logout' class='log-out' style="float: right;")
+			span Log out 
+		center
+			img(src='/logo.png')
+		br
+		div(class='initPlan')
+			center
+				h2 Start a New Plan
+				br
+				form(action='/plan', method="post")
+					label(class='label') When?
+					input(type='datetime-local', id='startTime', name='startTime', value='', required)
+					br
+					label(class='label') From?
+					input(type='text', id='startPlace', name='startPlace', value='', required)
+					br
+					input(type='submit', name='submit')

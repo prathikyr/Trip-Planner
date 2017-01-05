@@ -1,0 +1,41 @@
+doctype html
+
+html
+	head
+		title index
+		style
+			include css/style.css
+		script
+			include js/plan.js
+			
+	body(onload = 'javascript:init();')
+		center
+			img(src='/logo.png')
+		
+		div(class='login' align='center')
+			a(href="javascript:login();")
+				span login &nbsp;
+			a(href="javascript:reg();")
+				span Register
+			div(id='login' style='display:block')
+				form(action='/login', method="post")
+					input(type='text' name='email', placeholder='Email' required)
+					br
+					input(type='password' name='password', placeholder='Password' required)
+					br
+					if invalid == true
+						script.
+							alert("Invalid Email/Password");
+						h4 Invalid Email/Password
+					br
+					input(type='submit' name='submit')
+			div(id='reg' style='display:none')
+				form(action='/register', method="post")
+					input(type='text' name='name', placeholder='Name' required)
+					br
+					input(type='text' name='email', placeholder='Email' required)
+					br
+					input(type='password' name='password', placeholder='Password' required)
+					br
+					input(type='submit' name='submit')
+		

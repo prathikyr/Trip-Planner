@@ -1,0 +1,39 @@
+doctype html
+
+html
+	head
+		title hello
+		style
+			include css/style.css
+	body
+		a(href='/home' class='log-out' style="float: left;")
+			span back
+		a(href='/logout' class='log-out' style="float: right;")
+			span Log out 
+		center
+			img(src='/logo.png')
+		- var k = 0
+		each i in places
+			- var images = ['/bg1.jpg', '/bg2.jpg', '/bg3.jpg', '/bg4.jpg', '/bg5.jpg'];
+			div(class='place' style="float: left;")
+				img(src=images[k], width=250, height=200)
+				h3= i.placename
+				br
+				if k == 0
+					span Starting Point
+					br
+				else
+					span= "Arrival on: " + i.arrival.slice(8, 10) + "th at " + i.arrival.slice(11, 16)
+					br
+				span= "Departing on: " + i.departure.slice(8, 10) + "th at " + i.arrival.slice(11, 16)
+				br
+				if k == 0
+					continue
+				else
+					span= "Distance: " + journey[k-1].distance + " kms"
+				- k++
+		div(class='place' style="float: left;")
+			img(src='/bg5.jpg', width=250, height=200)
+			h3= places[0].placename
+			span End Point
+			br
