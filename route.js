@@ -44,15 +44,15 @@ logout = function(req, res){
 	res.redirect('/');
 }
 
-plans = function(req, res){
-	if(req.session.get('loggedIn') == true){
-		utility.getAllPlans(req, res, function(planlist){
-			res.render('plans.pug', {"planlist": planlist});
-		});
-	}
-	else
-		res.redirect('/');
-}
+// plans = function(req, res){
+// 	if(req.session.get('loggedIn') == true){
+// 		utility.getAllPlans(req, res, function(planlist){
+// 			res.render('plans.pug', {"planlist": planlist});
+// 		});
+// 	}
+// 	else
+// 		res.redirect('/');
+// }
 
 addplace = function(req, res){
 	utility.addPlace(req, res, function(){
@@ -75,6 +75,6 @@ module.exports.homePage = homePage;
 module.exports.planPage = planPage;
 module.exports.verify = verify;
 module.exports.logout = logout;
-module.exports.plans = plans;
+//module.exports.plans = plans;
 module.exports.addPlace = addplace;
 module.exports.viewPlan = viewPlan;

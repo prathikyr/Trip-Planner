@@ -3,7 +3,6 @@ var http = require('http');
 var express = require('express');
 var bodyParser = require('body-parser');
 var NodeSession = require('node-session');
-//var fileUpload = require('express-fileupload');
 var app = express();
 var utility = require('./utility.js');
 var route = require('./route.js');
@@ -17,8 +16,6 @@ function session(req, res, next){
 }
 
 app.use(session);
-
-//app.use(fileUpload()); 
 
 app.use(bodyParser.json());      
 app.use(bodyParser.urlencoded({     
@@ -39,27 +36,11 @@ app.post('/plan', planPage);
 
 app.get('/logout', logout);
 
-app.get('/plans', plans);
+//app.get('/plans', plans);
 
 app.post('/addplace', addplace);
 
 app.get('/viewplan', viewPlan);
-
-app.post('/addimage', function(req, res){
-//  	var sampleFile;
- 
-//     if (!req.files) {
-//         res.send('No files were uploaded.');
-//         return;
-//     }
- 
-//     sampleFile = req.files.image;
-
-	   //console.log(req.body.image) // form fields
-	   //console.log(req.files) // form files
-	   res.status(204).end()
-});
-
 
 app.listen(3000, function(){
 	console.log("listening on port 3000");

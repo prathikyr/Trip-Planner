@@ -14,9 +14,9 @@ html
 			img(src='/logo.png')
 		- var k = 0
 		each i in places
-			- var images = ['/bg1.jpg', '/bg2.jpg', '/bg3.jpg', '/bg4.jpg', '/bg5.jpg'];
+			- var images = ['bg-images/bg1.jpg', 'bg-images/bg2.jpg', 'bg-images/bg3.jpg', 'bg-images/bg4.jpg', 'bg-images/bg5.jpg', 'bg-images/bg6.jpg', 'bg-images/bg7.jpg', 'bg-images/bg8.jpg', 'bg-images/bg9.jpg', 'bg-images/bg10.jpg', 'bg-images/bg11.jpg', 'bg-images/bg12.jpg', 'bg-images/bg13.jpg', 'bg-images/bg14.jpg', 'bg-images/bg15.jpg'];
 			div(class='place' style="float: left;")
-				img(src=images[k], width=250, height=200)
+				img(src=images[k%15], width=250, height=200)
 				h3= i.placename
 				br
 				if k == 0
@@ -33,7 +33,7 @@ html
 					span= "Distance: " + journey[k-1].distance + " kms"
 				- k++
 		div(class='place' style="float: left;")
-			img(src='/bg5.jpg', width=250, height=200)
+			img(src='bg-images/bg15.jpg', width=250, height=200)
 			h3= places[0].placename
 			span End Point
 			br
